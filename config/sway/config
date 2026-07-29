@@ -33,7 +33,7 @@ output HDMI-A-1 resolution 3440x1440@100Hz position 0,0 scale 1.25
 # output eDP-1 resolution 1920x1080@144Hz position 0,0 scale 1.25
 output eDP-1 disable
 
-set $wallpaper /home/draco/Pictures/wallpaper/current/the_witcher_3_wild_hunt_geralt_and_ciri-wallpaper-7680x6144\ \(21:9\).jpg
+set $wallpaper ./wallpapers/cyberpunk-mclaren-supercars-neon-art-21⁄9.jpg
 output * bg $wallpaper fill
 
 ### Idle configuration
