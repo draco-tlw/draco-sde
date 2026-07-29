@@ -1,0 +1,106 @@
+* {
+    bg0:     #0a0e14ee;
+    bg1:     #10141c26;
+    fg0:     #d6f6ffff;
+    fg-dim:  #5c7a8aff;
+    accent:  #00d9ffff;
+    accent2: #0066ffff;
+    urgent:  #ff2d6fff;
+
+    background-color: transparent;
+    text-color:        @fg0;
+    font:               "Iosevka Nerd Font 11";
+}
+
+window {
+    background-color: @bg0;
+    border:            2px;
+    border-color:      @accent;
+    border-radius:     0px;
+    width:              480px;
+    location:           center;
+    anchor:              center;
+    padding:              0px;
+}
+
+mainbox {
+    background-color: transparent;
+    padding: 12px;
+    spacing: 10px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: #10141c26;
+    text-color:        @fg0;
+    border:            0px 0px 2px 0px;
+    border-color:      @accent;
+    padding:            10px;
+    spacing:              8px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color:  @accent;
+    font:        "Iosevka Nerd Font Bold 11";
+}
+
+entry {
+    text-color:   @fg0;
+    placeholder:  "search...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    background-color: transparent;
+    lines:             8;
+    columns:           1;
+    spacing:            4px;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+}
+
+element {
+    background-color: transparent;
+    text-color:         @fg-dim;
+    padding:            8px 10px;
+    border-radius:      0px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:         @fg-dim;
+}
+
+element selected.normal {
+    background-color: #00d9ff1f;
+    text-color:         @accent;
+    border:            0px 0px 0px 2px;
+    border-color:      @accent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:         inherit;
+    vertical-align:      0.5;
+}
+
+element-icon {
+    size:     20px;
+    padding:  0px 10px 0px 0px;
+}
+
+message {
+    background-color: @bg1;
+    border:            1px;
+    border-color:      @urgent;
+    padding:            0px;
+    margin:              0px;
+}
+
+textbox {
+    text-color: @fg0;
+    padding:      8px;
+    margin:       0px;
+}

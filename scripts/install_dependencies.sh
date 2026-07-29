@@ -5,6 +5,7 @@ PACKAGES=(
     sway
     mako
     grim
+    rofi
 )
 
 echo "=> Checking dependencies..."

@@ -45,3 +45,4 @@ echo "=> Symlinking configs..."
 
 safe_link "$PROJECT_DIR/config/sway" "$XDG_CONFIG_HOME/sway"
 safe_link "$PROJECT_DIR/config/mako" "$XDG_CONFIG_HOME/mako"
+safe_link "$PROJECT_DIR/config/rofi" "$XDG_CONFIG_HOME/rofi"
