@@ -6,6 +6,7 @@ PACMAN_PACKAGES=(
     swaybg
     swayidle
     swaylock
+    kitty
     mako
     grim
     rofi
