@@ -44,6 +44,8 @@ safe_link() {
 echo "=> Symlinking configs..."
 
 safe_link "$PROJECT_DIR/config/sway" "$XDG_CONFIG_HOME/sway"
+safe_link "$PROJECT_DIR/config/swaylock" "$XDG_CONFIG_HOME/swaylock"
 safe_link "$PROJECT_DIR/config/mako" "$XDG_CONFIG_HOME/mako"
 safe_link "$PROJECT_DIR/config/rofi" "$XDG_CONFIG_HOME/rofi"
 safe_link "$PROJECT_DIR/config/clipse" "$XDG_CONFIG_HOME/clipse"
+safe_link "$PROJECT_DIR/config/xdg-desktop-portal" "$XDG_CONFIG_HOME/xdg-desktop-portal"

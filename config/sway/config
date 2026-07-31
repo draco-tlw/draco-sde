@@ -37,11 +37,11 @@ set $wallpaper ./wallpapers/cyberpunk-mclaren-supercars-neon-art-21⁄9.jpg
 output * bg $wallpaper fill
 
 ### Idle configuration
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 0a0e14' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 0a0e14'
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 0a0e14' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 0a0e14'
 
 ### Input configuration
 
@@ -66,7 +66,7 @@ input type:touchpad {
     middle_emulation enabled
 }
 
-### Look & feel — minimal cyberpunk
+### Look & feel
 #
 # Thin borders, tight gaps, no title bars — clean tiling with a neon accent.
 
@@ -118,6 +118,8 @@ for_window [app_id="floatterm"] floating enable, resize set 640 400, move positi
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym $mod+Shift+Escape exec ~/.config/sway/scripts/powermenu.sh
 #
 # Moving around:
 #
@@ -241,10 +243,10 @@ bindsym $mod+r mode "resize"
 
     bindsym Print exec ~/.config/sway/scripts/osd.sh screenshot
 
-    bindsym $mod+F5 exec kitty --class floatterm -e bluetui
-    bindsym $mod+F6 exec kitty --class floatterm -e wifitui
-    bindsym $mod+F7 exec kitty --class floatterm -e wiremix
-    bindsym $mod+F8 exec kitty --class floatterm -e clipse
+    bindsym $mod+F5 exec kitty --class floatterm -o "map esc quit" -o confirm_os_window_close=0 -e bluetui
+    bindsym $mod+F6 exec kitty --class floatterm -o "map esc quit" -o confirm_os_window_close=0 -e wifitui
+    bindsym $mod+F7 exec kitty --class floatterm -o "map esc quit" -o confirm_os_window_close=0 -e wiremix
+    bindsym $mod+F8 exec kitty --class floatterm -o "map esc quit" -o confirm_os_window_close=0 -e clipse
 
 #
 # Status Bar:
@@ -272,8 +274,14 @@ bar {
 }
 
 ### Executions:
+
 # Fix D-Bus Environment Variables
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+
 exec clipse -listen
+
+# Polkit Graphical Authentication Agent
+exec /usr/lib/polkit-kde-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 include @sysconfdir@/sway/config.d/*

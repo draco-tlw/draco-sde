@@ -3,11 +3,18 @@ set -euo pipefail
 
 PACMAN_PACKAGES=(
     sway
+    swaybg
+    swayidle
+    swaylock
     mako
     grim
     rofi
     bluetui
     wiremix
+    polkit-kde-agent
+    polkit-gnome
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
 )
 
 AUR_PACKAGES=(

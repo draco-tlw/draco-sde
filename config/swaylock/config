@@ -1,0 +1,51 @@
+# --- Behavior ---
+ignore-empty-password
+show-keyboard-layout
+show-failed-attempts
+
+# --- Typography ---
+font=Iosevka Nerd Font
+font-size=22
+
+# --- Ring / HUD Dimensions ---
+indicator-radius=72
+indicator-thickness=10
+indicator-idle-visible
+
+# --- Base Theme ---
+color=05070a
+line-color=00000000
+separator-color=00000000
+
+# --- Idle State (Neon Cyan HUD) ---
+ring-color=00f0ff22
+inside-color=090d16d9
+text-color=00f0ff
+
+# --- Typing Highlights ---
+key-hl-color=00f0ff
+bs-hl-color=ffe600
+
+# --- Verifying State (Electric Purple Glow) ---
+ring-ver-color=9d00ff
+inside-ver-color=9d00ff22
+text-ver-color=e2a6ff
+
+# --- Access Denied State (Glitch Magenta / Red) ---
+ring-wrong-color=ff0055
+inside-wrong-color=ff005533
+text-wrong-color=ff0055
+
+# --- Clear State (Cyber Mint) ---
+ring-clear-color=00ffcc
+inside-clear-color=00ffcc22
+text-clear-color=00ffcc
+
+# --- Keyboard Layout HUD Box ---
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=00f0ff
+
+# --- Caps Lock Warnings ---
+caps-lock-key-hl-color=ff0055
+caps-lock-bs-hl-color=ffe600
