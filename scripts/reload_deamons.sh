@@ -1,16 +1,14 @@
 echo "=> Reloading daemons..."
 
 if pgrep -x "sway" > /dev/null; then
-    swaymsg reload || echo "Sway reload failed, is it running under this TTY?"
-else
-    echo "Sway is not running, skipping sway reload."
+    swaymsg reload || echo "Sway reload failed."
 fi
 
-if pgrep -x "mako" > /dev/null; then
-    makoctl reload || echo "Mako reload failed."
+if pgrep -x "noctalia" > /dev/null; then
+    noctalia msg config-reload || echo "Noctalia reload failed."
 else
-    echo "Mako is not running, starting it..."
-    mako &
+    echo "Noctalia is not running, starting it..."
+    noctalia &
     disown
 fi
 

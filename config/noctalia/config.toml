@@ -1,0 +1,113 @@
+[theme]
+mode = "auto"
+shell_mode = "follow"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = ["sway", "kitty", "gtk3", "gtk4", "qt", "kcolorscheme", "btop"]
+
+[theme.templates.user.clipse]
+input_path  = "~/.config/noctalia/templates/clipse.tera"
+output_path = "~/.config/clipse/custom_theme.json"
+
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+transition = ["fade", "wipe", "disc"]
+transition_duration = 2000
+transition_on_startup = true
+
+# Optional: If you ever want it to rotate wallpapers from a folder automatically
+[wallpaper.automation]
+enabled = true
+interval_seconds = 1800
+order = "random"
+
+[shell]
+corner_radius_scale = 0.0 # Match your sharp Sway borders
+font_family = "JetBrainsMono Nerd Font"
+clipboard_enabled = true
+
+[shell.animation]
+enabled = false # Disables all global shell animations
+
+[shell.keyboard_layout.custom_labels]
+"English (US)" = "EN"
+"Persian (Windows)" = "FA"
+
+[idle.behavior.screen-off]
+timeout = 600
+action = "command"
+command = "swaymsg 'output * power off'"
+resume_command = "swaymsg 'output * power on'"
+
+[idle.behavior.lock]
+timeout = 300
+action = "lock"
+
+[brightness]
+enable_ddcutil = true
+
+[brightness.monitor.eDP-1]
+backend = "backlight"
+
+[brightness.monitor.HDMI-A-1]
+backend = "ddcutil"
+
+[bar.default]
+position = "top"
+background_opacity = 0.93 # #0a0e14ee equivalent
+shadow = false
+
+# --- Spacing & Margins ---
+widget_spacing = 16  # Gap between widgets within a section
+padding = 16        # Padding from the edges of the screen to the start/end sections
+
+start = ["workspaces", "active_window"]
+center = ["clock"]
+end = ["sysmon-cpu", "sysmon-ram", "sysmon-net-rx", "sysmon-net-tx", "tray", "volume", "network", "session"]
+
+[control_center]
+width = 760
+
+# --- Widget Configurations ---
+
+[widget.workspaces]
+style = "regular"
+show_icons = false
+show_labels = true
+
+[widget.sysmon-cpu]
+type = "sysmon"
+stat = "cpu_usage"
+show_value = true
+glyph = "cpu"           
+highlight_color = "error"
+
+[widget.sysmon-ram]
+type = "sysmon"
+stat = "ram_used"
+show_value = true
+glyph = "server"
+
+[widget.sysmon-net-rx]
+type = "sysmon"
+stat = "net_rx"
+glyph = "arrow-down"
+
+[widget.sysmon-net-tx]
+type = "sysmon"
+stat = "net_tx"
+glyph = "arrow-up"
+
+[widget.clock]
+format = "{:%Y-%m-%d %H:%M:%S}"
+
+[hooks]
+theme_mode_changed = "~/.config/noctalia/hooks/gtk-theme.sh"
+
+[keybinds]
+up = ["up", "ctrl+p"]
+down = ["down", "ctrl+n"]
