@@ -1,3 +1,8 @@
 config/clipse/tmp_files/*
 config/clipse/clipse.log
 config/clipse/clipboard_history.json
+
+repomix-output.xml
+
+.zcompdump*
+.zsh_history
