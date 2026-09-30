@@ -63,6 +63,12 @@ else
     echo "   Qt Platform Theme already set."
 fi
 
+echo "=> Setting KDE default terminal to kitty..."
+if command -v kwriteconfig6 &> /dev/null; then
+    kwriteconfig6 --file kdeglobals --group General --key TerminalApplication "kitty"
+    echo "   Set TerminalApplication=kitty in kdeglobals"
+fi
+
 echo "=> Configuring i2c permissions for ddcutil..."
 # Automatically load the i2c-dev module on boot
 if [ ! -f /etc/modules-load.d/i2c-dev.conf ] || ! grep -q "i2c-dev" /etc/modules-load.d/i2c-dev.conf; then
