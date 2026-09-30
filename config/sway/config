@@ -28,9 +28,12 @@ set $border-w  #1a2530
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output HDMI-A-1 resolution 3440x1440@100Hz position 0,0 scale 1.25
+# output HDMI-A-1 resolution 3440x1440@100Hz position 0,0 scale 1.25
+output HDMI-A-1 resolution 3440x1440@100Hz position 0,0 scale 1
+# output HDMI-A-1 resolution 2560x1440@120Hz position 0,0 scale 1
+# output HDMI-A-1 resolution 3840x2016@60Hz position 0,0 scale 1
 # output HDMI-A-1 disable
-# output eDP-1 resolution 1920x1080@144Hz position 0,0 scale 1.25
+# output eDP-1 resolution 1920x1080@144Hz position 0,0 scale 1
 output eDP-1 disable
 
 set $wallpaper ./wallpapers/cyberpunk-mclaren-supercars-neon-art-21⁄9.jpg
@@ -40,7 +43,7 @@ output * bg $wallpaper fill
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 0a0e14' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 6000 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 0a0e14'
 
 ### Input configuration
@@ -253,9 +256,9 @@ bindsym $mod+r mode "resize"
 #
 bar {
     position top
-    height 28
+    height 30
     status_command ~/.config/sway/scripts/statusbar.sh
-    font pango:JetBrainsMono Nerd Font 10
+    font pango:JetBrainsMono Nerd Font 11
     colors {
         background         #0a0e14ee
         statusline         #d6f6ff

@@ -16,6 +16,7 @@ PACMAN_PACKAGES=(
     polkit-gnome
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
+    fastfetch
 )
 
 AUR_PACKAGES=(
