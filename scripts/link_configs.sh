@@ -55,3 +55,6 @@ safe_link "$PROJECT_DIR/config/qt6ct" "$XDG_CONFIG_HOME/qt6ct"
 safe_link "$PROJECT_DIR/config/gtk-3.0" "$XDG_CONFIG_HOME/gtk-3.0"
 safe_link "$PROJECT_DIR/config/gtk-4.0" "$XDG_CONFIG_HOME/gtk-4.0"
 
+safe_link "$PROJECT_DIR/config/zsh" "$XDG_CONFIG_HOME/zsh"
+safe_link "$PROJECT_DIR/config/zsh/.zshenv" "$HOME/.zshenv"
+safe_link "$PROJECT_DIR/config/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
