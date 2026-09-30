@@ -29,6 +29,7 @@ order = "random"
 corner_radius_scale = 0.0 # Match your sharp Sway borders
 font_family = "JetBrainsMono Nerd Font"
 clipboard_enabled = true
+screen_time_enabled = true
 
 [shell.animation]
 enabled = false # Disables all global shell animations
